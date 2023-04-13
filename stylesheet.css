@@ -1,0 +1,95 @@
+html {
+    height: 100%;
+}
+
+body {
+    color: rgb(200,200,200);
+
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: linear-gradient(
+        to bottom right,
+        rgb(152, 251, 152), rgb(160,32,240), black 20%, black 80%, rgb(160,32,240), #98fb98
+    );
+  }
+
+#logo {
+    width: 80px;
+    height: auto;
+}
+
+h1 {
+    font-size: 50px;
+    font-weight: lighter;
+}
+
+.main-container {
+    margin: 15px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(200,200,200);
+    border: 2px solid rgb(47,49,49);
+    border-radius: 8px;
+    background-color: rgb(47,49,49);
+}
+
+.main-container > * {
+    margin: 15px;
+}
+
+nav.navbar {
+    border-radius: 1em;
+    margin-left: 0px;
+    width: auto;
+    top: 0%;
+    background-color: #333; /* Set background color of navbar */
+}
+  
+nav ul {
+    list-style-type: none; /* Remove default list styles */
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default padding */
+    display: flex; /* Set display property to flex */
+    justify-content: space-between; /* Spread list items evenly */
+    align-items: center;
+}
+  
+nav li {
+    margin: 0 10px; /* Add margin between list items */
+}
+  
+nav a {
+    color: #fff; /* Set color of links */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 1.2em; /* Set font size of links */
+    font-weight: bold; /* Set font weight of links */
+    padding: 10px; /* Add padding to links */
+    border-radius: 5px; /* Add rounded corners to links */
+}
+  
+nav a:hover {
+    background-color: #fff; /* Change background color of links on hover */
+    color: #333; /* Change text color of links on hover */
+}
+
+.home-paragraph, .home-paragraph div {
+    margin-bottom: 2em;
+    padding-left: 20px;
+    padding-top: 5px;
+    border-radius: 1em;
+    background-color: rgb(47, 49, 49);
+    border: 3px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to top, rgb(152, 251, 152), rgb(160,32,240));
+    border-right: 0;
+    border-bottom: 0;
+    border-top: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    text-indent: -1em;
+}
