@@ -24,29 +24,38 @@
                     <li><a href="portfolio.html">Blog</a></li>
                 </ul>
             </nav>
-            <h1>
-                Welcome!
-            </h1>
-            <div class="background">
-                <p class="home-paragraph" id="bio">
-                    My name is Patrick Hunner and I'm a student at the University
-                    of Minnesota studying Computer Science who's always looking for 
-                    opportunities to grow as a person and a programmer. 
-                    <br><br>I continue to become more and more excited about the potential 
-                    positive good that technology can do for the world when we utilize it
-                    to its fullest potential.
-                </p>
-                <h2>
-                    Projects
-                </h2>
-                <p class="home-paragraph" id="projects">
-                    <div>    
+            <div id="flex">
+                <div class="flex-subset">
+                    <h1>
+                        Welcome!
+                    </h1>
+                    <div class="background">
+                        <div class="home-paragraph" id="bio">
+                            <p>
+                                My name is Patrick Hunner and I'm a student at the University
+                                of Minnesota studying Computer Science who's always looking for 
+                                opportunities to grow as a person and a programmer. 
+                                <br><br>I continue to become more and more excited about the potential 
+                                positive good that technology can do for the world when we utilize it
+                                to its fullest potential.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-subset">
+                    <h2>
+                        Projects
+                    </h2>
+                    <div class="home-paragraph" id="bio"> 
                         <ul>
-                            <li>Tetris</li>
-                            <li>Other</li>
+                            <li><button id="tetris" onclick="switchContent(event)">Tetris</button></li>
+                            <li><button id="web_server" onclick="switchContent(event)">Web Server</button></li>
+                            <li><button id="drone_sim" onclick="switchContent(event)">Drone Simulation</button></li>
+                            <li><button id="cot" onclick="switchContent(event)">COT Analysis</button></li>
                         </ul>
-                    </div> 
-                </p>
+                    </div>
+                    <div class="description" class="home-paragraph" id="description"></div>
+                </div>
             </div>
         </div>
     </body>
