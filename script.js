@@ -27,10 +27,12 @@ function switchContent(event) {
                 a set of pipes to communicate asynchronously with the server, \
                 while manually handling locks to allocate control and energy to \
                 each process when needed. <br><br>\
+                This was a very challenging project but it taught me a lot about \
+                low level, system programming and how to handle multiple processes. \
+                It also taught me how to effectively use a debugger and read/write \
+                basic assembly code. \
                 Because this is a school assignment, the code must be made private \
-                but here is a link to a video of me using the system and describing \
-                how it works<br><br> \
-                If any employers would like to view the code, please email me at \
+                but if any employers would like to view the code, please email me at \
                 phunner52@gmail.com and I'd be happy to share!";
             break;
         case "drone_sim":
