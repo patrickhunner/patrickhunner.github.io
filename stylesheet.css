@@ -66,8 +66,8 @@ nav a {
     padding: 10px; /* Add padding to links */
     border-radius: 5px; /* Add rounded corners to links */
 }
-  
-nav a:hover {
+
+nav a.change-hover:hover {
     background-color: #fff; /* Change background color of links on hover */
     color: #333; /* Change text color of links on hover */
 }
@@ -98,4 +98,26 @@ li {
 #flex {
     display: flex;
     justify-content: space-between;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: grey;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    margin-top: 5px;
+  }
+  
+button:hover {
+    background-color: darkgrey;
+}
+
+.description a {
+    color: rgb(216,191,216);
 }
