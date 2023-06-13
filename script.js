@@ -82,13 +82,18 @@ function switchContent(event) {
                 It also gave me a base understanding of HTML and CSS, skills that \
                 I loved working with and hope to continue working on. There are a few \
                 pages, mostly based around a scheduling system where you can add, edit \
-                and delete events. It has a login system that was never developed to \
-                dynamically create new users but securely authenticates previous ones \
-                with a hashed password. <br><br>\
-                Because this is a school assignment, the code must be made private \
-                but here is a link to a video of me navigating the website and \
-                describing how it works. <br><br> \
-                If any employers would like to view the code, please email me at \
+                and delete events. It has a login system that verifies users with \
+                javascript encryption functions to eliminate multiple types of authentication \
+                threats. <br><br>\
+                Here I learned how to safely read and write to databases, securely store information \
+                and navigate between web pages. The platform utilizes session objects to store \
+                short-term user information and track logins. Upon logouts occurring, users \
+                will always be redirected to login pages to maintain consistent authentication \
+                This project also exposed me to the more readable and reusable PUG framework \
+                for web programming. A style I will most likely try and implement more consistently \
+                in the future. <br><br>\
+                Because this is a school assignment, the code must be made private but if \
+                any employers would like to view the code, please email me at \
                 phunner52@gmail.com and I'd be happy to share!";
             break;
     }
