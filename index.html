@@ -1,60 +1,230 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <link rel="stylesheet" href="stylesheet.css">
-        <meta charset="UTF-8">
-        <title>My Navigation Bar</title>
-        <script src="script.js"></script>
-        <script src="https://unpkg.com/docx4js/dist/docx4js.js"></script>
-    </head>
-    <body>
-        <div class="main-container">
-            <nav class="navbar">
-                <ul>
-                    <li><img id="logo" src="images/logo.png" alt="My Logo"></li>
-                    <li><a href="index.html" class="change-hover">Home</a></li>
-                    <li><a href="resume.html" class="change-hover">Resume</a></li>
-                    <li><a href="transcript.html" class="change-hover">Transcript</a></li>
-                    <li>
-                        <a href="https://www.linkedin.com/in/patrickhunner/" target="_blank">
-                            <img src="images/linkedin.png" alt="LinkedIn" width=40px height=40px>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/patrickhunner" target="_blank">
-                            <img src="images/github.png" alt="Github" width=40px height=40px>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <h1>
-                Welcome!
-            </h1>
-            <div class="background">
-                <div class="home-paragraph" id="bio">
-                    <p>
-                        My name is Patrick Hunner and I'm a student at the University
-                        of Minnesota studying Computer Science who's always looking for 
-                        opportunities to grow as a person and a programmer. 
-                        <br><br>I continue to become more and more excited about the potential 
-                        positive good that technology can do for the world when we utilize it
-                        to its fullest potential.
-                    </p>
-                </div>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patrick Hunner's Maker Portfolio</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Georgia, serif;
+            line-height: 1.6;
+            margin: 80px auto 40px auto;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+
+        /* Top Right Navigation */
+        nav {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 18px;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 48px;
+            font-weight: 1000;
+            margin-bottom: 10px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #000;
+            margin: 20px 0;
+        }
+
+        .project-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .project-item-container {
+            margin-bottom: 20px;
+        }
+
+        .project-header {
+            display: flex;
+            align-items: baseline;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .project-link {
+            color: #4a90e2; /* Soft blue */
+            font-size: 30px;
+            font-weight: normal;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        /* The Arrow/Chevron */
+        .arrow {
+            font-size: 18px;
+            margin-left: 10px;
+            color: #4a90e2;
+            transition: transform 0.2s ease;
+            display: inline-block;
+        }
+
+        .active .arrow {
+            transform: rotate(90deg); /* Points down when open */
+        }
+
+        /* The Dotted Line */
+        .dots {
+            flex-grow: 1;
+            margin: 0 10px;
+            border-bottom: 2px dotted #d3d3d3;
+            height: 0.8em;
+        }
+
+        .project-date {
+            font-size: 20px;
+            color: #000;
+            white-space: nowrap;
+        }
+
+        /* Hidden Description Styling */
+        .description {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            font-size: 18px;
+            color: #333;
+            padding-left: 5px;
+            border-left: 1px solid #eee;
+            margin-top: 5px;
+        }
+
+        .active + .description {
+            max-height: 1000px; /* Adjust based on how much text you have */
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Patrick Hunner's Maker Portfolio</h1>
+    
+    <hr>
+
+    <div class="project-list">
+        <div class="project-item-container">
+            <div class="project-header" onclick="toggleProject(this)">
+                <a href="projects/typing.html" class="project-link" onclick="event.stopPropagation()">Typing Test</a>
+                <span class="arrow">▶</span>
+                <span class="dots"></span>
+                <span class="project-date">3/5</span>
             </div>
-            <h2>
-                Projects List
-            </h2>
-            <div class="home-paragraph" id="bio"> 
-                <ul>
-                    <li><button id="web_app" onclick="switchContent(event)">Full Stack Web Application</button></li>
-                    <li><button id="drone_sim" onclick="switchContent(event)">Drone Simulation</button></li>
-                    <li><button id="cot" onclick="switchContent(event)">COT Analysis</button></li>
-                    <li><button id="web_server" onclick="switchContent(event)">Web Server</button></li>
-                    <li><button id="tetris" onclick="switchContent(event)">Tetris Clone</button></li>
-                </ul>
+            <div class="description">
+                Asteroid destroyer meets typing tutor. This is a fun little game I made to help me practice my typing skills. The game gets progressively harder as you play, and it's a great way to improve your typing speed and accuracy.
             </div>
-            <div class="description" class="home-paragraph" id="description" display="none"></div>
         </div>
-    </body>
+        <div class="project-item-container">
+            <div class="project-header" onclick="toggleProject(this)">
+                <a href="projects/maze_solver.html" class="project-link" onclick="event.stopPropagation()">Maze Solver</a>
+                <span class="arrow">▶</span>
+                <span class="dots"></span>
+                <span class="project-date">2/20</span>
+            </div>
+            <div class="description">
+                Just a little pathfinding visualizer I made to help me understand how different algorithms work. You can choose between breadth first search, depth first search, Dijkstra's algorithm, and A* search. You can also create your own mazes and see how the algorithms perform on them!
+            </div>
+        </div>
+        <div class="project-item-container">
+            <div class="project-header" onclick="toggleProject(this)">
+                <a href="projects/flappy_bird/flappy.html" class="project-link" onclick="event.stopPropagation()">Flappy Bird</a>
+                <span class="arrow">▶</span>
+                <span class="dots"></span>
+                <span class="project-date">2/11</span>
+            </div>
+            <div class="description">
+                This is a recreation of the popular mobile game "Flappy Bird". The main purpose for the project was learning how to make pixel art using Piskel, adding sound effects from creative-commons licensed music, and saving information in the browser for robust leaderboards. 
+            </div>
+        </div>
+        <div class="project-item-container">
+            <div class="project-header" onclick="toggleProject(this)">
+                <a href="projects/snake/snake.html" class="project-link" onclick="event.stopPropagation()">2 Player Snake</a>
+                <span class="arrow">▶</span>
+                <span class="dots"></span>
+                <span class="project-date">2/4</span>
+            </div>
+            <div class="description">
+                This is my version of snake that is 2 players! You're competing for the highest score, but you can also try to trap your opponent and make them crash into you or the wall. The game is made using HTML5 canvas and JavaScript.
+            </div>
+        </div>
+        <div class="project-item-container">
+            <div class="project-header" onclick="toggleProject(this)">
+                <a href="projects/tribute/tribute.html" class="project-link" onclick="event.stopPropagation()">LeGouffre</a>
+                <span class="arrow">▶</span>
+                <span class="dots"></span>
+                <span class="project-date">1/26</span>
+            </div>
+            <div class="description">
+                This is a tribute to the short film "Le Gouffre" by Mathieu Tremblin. I created this page to showcase the film and provide some background information about its creation.
+            </div>
+        </div>
+        <div class="project-item-container">
+            <div class="project-header" onclick="toggleProject(this)">
+                <a href="projects/pong/pong.html" class="project-link" onclick="event.stopPropagation()">Pong</a>
+                <span class="arrow">▶</span>
+                <span class="dots"></span>
+                <span class="project-date">1/18</span>
+            </div>
+            <div class="description">
+                This is a recreation of the classic game "Pong". Through some prompt engineering work with ChatGPT, I was able to make a functioning game that has a few extra fun elements added to it.
+                <ul>
+                    <li>You can choose to play against a computer (very difficult) or a friend!</li>
+                    <li>Each time someone gets a point or the ball hits a paddle, the screen shakes a little just to make you FEEL that impact a bit more.</li>
+                    <li>The ball increases in speed by 5% everytime it hits a paddle and will increase it's <italics>base speed</italics> by 10% each time someone wins a point making the game get quite a bit more difficult as it goes on.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="project-item-container">
+            <div class="project-header" onclick="toggleProject(this)">
+                <a href="projects/wordle.html" class="project-link" onclick="event.stopPropagation()">Wordle</a>
+                <span class="arrow">▶</span>
+                <span class="dots"></span>
+                <span class="project-date">1/9</span>
+            </div>
+            <div class="description">
+                My first real experience "vibe coding". I used ChatGPT5 to help me create a Wordle clone with a few personal tweaks.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleProject(element) {
+            const allHeaders = document.querySelectorAll('.project-header');
+            
+            // Check if this one is already active
+            const isActive = element.classList.contains('active');
+
+            // Close all others.
+            allHeaders.forEach(header => {
+                header.classList.remove('active');
+            });
+
+            // If it wasn't active, open it
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
+    </script>
+
+</body>
 </html>
